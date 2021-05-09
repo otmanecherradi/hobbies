@@ -4,8 +4,8 @@ Just some side projects that I made.
 
 ## Projects
 
-- [World Countries Website](./01-world-countries-website/README.md)
-- [AI Expo Demo](./02-ai-expo-demo/README.md)
+- [World Countries Website](./001-world-countries-website/README.md)
+- [AI Expo Demo](./002-ai-expo-demo/README.md)
 
 ## Note
 
