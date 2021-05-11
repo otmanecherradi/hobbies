@@ -27,6 +27,13 @@ Artificial intelligence leverages computers and machines to mimic the problem-so
 
 > Python based Jupiter Notebook to demo image recognition
 
+- [TensorFlow](https://www.tensorflow.org/)
+- [Keras: the Python deep learning API](https://keras.io/)
+- [Matplotlib: Python plotting](https://matplotlib.org/)
+- [@tensorflow/tfjs - npm](https://www.npmjs.com/package/@tensorflow/tfjs)
+
+- [Rectifier (neural networks)](<https://en.wikipedia.org/wiki/Rectifier_(neural_networks)>)
+
 ## Future of AI
 
 > What the future holds in terms of AI and Machine Learning
