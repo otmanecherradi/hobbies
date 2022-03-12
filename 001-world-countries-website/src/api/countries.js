@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const getAllCountries = () => {
-	return axios.get('https://restcountries.eu/rest/v2/all');
+	return axios.get('https://restcountries.com/v3.1/all');
 };
 
 const getCountryByAlphaCode = (countryCode) => {
