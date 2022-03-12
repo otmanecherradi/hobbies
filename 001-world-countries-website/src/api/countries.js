@@ -5,7 +5,7 @@ const getAllCountries = () => {
 };
 
 const getCountryByAlphaCode = (countryCode) => {
-	return axios.get(`https://restcountries.eu/rest/v2/alpha/${countryCode}`);
+	return axios.get(`https://restcountries.com/v3.1/alpha/${countryCode}`);
 };
 
 export default { getAllCountries, getCountryByAlphaCode };
