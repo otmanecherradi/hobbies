@@ -1,20 +1,20 @@
 <template>
   <div class="home container">
     <div class="countries" v-if="!isLoading">
-      <div class="country" v-for="country in countries" :key="country.alpha2">
-        <router-link :to="'/' + country.alpha2Code">
+      <div class="country" v-for="country in countries" :key="country.cca3">
+        <router-link :to="'/' + country.cca3">
           <div class="countryImage">
             <figure class="image is-5by4">
               <img
                 class="image"
-                :src="country.flag"
-                :alt="country.name + ' flag'"
+                :src="country.flags.svg"
+                :alt="country.name.official + ' flag'"
               />
             </figure>
           </div>
           <div class="countryContent">
-            <p class="title is-4">{{ country.name }}</p>
-            <p class="subtitle is-6">{{ country.capital }}</p>
+            <p class="title is-4">{{ country.name.common }}</p>
+            <p class="subtitle is-6">{{ country.capital?.join(", ") }}</p>
           </div>
         </router-link>
       </div>
@@ -26,21 +26,21 @@
 import { mapActions, mapState, mapGetters } from 'vuex';
 
 export default {
-	name: 'Home',
-	data() {
-		return {};
-	},
-	computed: {
-		...mapState('ui', ['isLoading']),
-		...mapGetters('countries', ['countries'])
-	},
-	beforeMount() {
-		this.getListOfCountries();
-	},
-	methods: {
-		...mapActions('countries', ['getListOfCountries'])
-	},
-	components: {}
+  name: 'Home',
+  data() {
+    return {};
+  },
+  computed: {
+    ...mapState('ui', ['isLoading']),
+    ...mapGetters('countries', ['countries'])
+  },
+  beforeMount() {
+    this.getListOfCountries();
+  },
+  methods: {
+    ...mapActions('countries', ['getListOfCountries'])
+  },
+  components: {}
 };
 </script>
 
@@ -54,11 +54,11 @@ export default {
   flex-wrap: wrap;
 
   .country {
-    height: 18.375rem;
+    height: 19.375rem;
     margin-bottom: 1.5rem;
     margin-right: 1.5rem;
     overflow: hidden;
-    width: 15.75rem;
+    width: 18rem;
     background-color: #fff;
     border-radius: 0.5rem;
     transition: 130ms;

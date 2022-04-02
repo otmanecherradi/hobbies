@@ -10,7 +10,7 @@
 
       <l-marker :lat-lng="currentCenter">
         <l-popup>
-          <div>{{ country.name }}</div>
+          <div>{{ country.name.official }}</div>
         </l-popup>
       </l-marker>
     </l-map>
@@ -21,39 +21,40 @@ import { LMap, LTileLayer, LMarker, LPopup } from '@vue-leaflet/vue-leaflet';
 import 'leaflet/dist/leaflet.css';
 
 export default {
-	data() {
-		return {
-			tileURL: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-			attribution:
-				'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-			zoom: 5,
-			mapOptions: {
-				zoomSnap: 0.5,
-				zoomControls: false,
-				scrollWheelZoom: false
-			}
-		};
-	},
-	props: ['currentCountry'],
-	computed: {
-		country() {
-			return this.$props.currentCountry;
-		},
-		currentCenter() {
-			if (!this.country) {
-				return [0, 0];
-			} else {
-				return this.country.latlng;
-			}
-		}
-	},
-	methods: {},
-	components: {
-		LMap,
-		LTileLayer,
-		LMarker,
-		LPopup
-	}
+  data() {
+    return {
+      tileURL: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+      attribution:
+        '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+      zoom: 5,
+      mapOptions: {
+        zoomSnap: 0.5,
+        zoomControls: false,
+        scrollWheelZoom: false
+      }
+    };
+  },
+  props: ['currentCountry'],
+  computed: {
+    country() {
+      console.log(this.$props.currentCountry);
+      return this.$props.currentCountry;
+    },
+    currentCenter() {
+      if (!this.country) {
+        return [0, 0];
+      } else {
+        return this.country.latlng;
+      }
+    }
+  },
+  methods: {},
+  components: {
+    LMap,
+    LTileLayer,
+    LMarker,
+    LPopup
+  }
 };
 </script>
 
