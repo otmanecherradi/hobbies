@@ -1,6 +1,6 @@
 // initial state
 const state = () => ({
-	isLoading: null,
+  isLoading: null,
 });
 
 // getters
@@ -11,15 +11,15 @@ const actions = {};
 
 // mutations
 const mutations = {
-	setLoading(state, status) {
-		state.isLoading = status;
-	},
+  setLoading(state, status) {
+    state.isLoading = status;
+  },
 };
 
 export default {
-	namespaced: true,
-	state,
-	getters,
-	actions,
-	mutations,
+  namespaced: true,
+  state,
+  getters,
+  actions,
+  mutations,
 };
